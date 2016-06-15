@@ -5,7 +5,7 @@
 		<title>My first Three.js app</title>
 		<style>
 			body { margin: 0; }
-			canvas { width: 30%; height: 50% }
+			canvas { width: 30%; height: 20% }
 		</style>
 	</head>
 	<body>
