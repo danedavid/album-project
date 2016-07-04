@@ -1,0 +1,434 @@
+/*
+	CSS stylesheet for index.html and any subsequent pages, if any.
+*/
+@font-face {
+	font-family: eurof55;
+	src: url('fonts/eurof55.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: Powerweld;
+	src: url('fonts/Powerweld.ttf') format('truetype');
+}
+
+header,
+h1,
+nav,
+section,
+#canvas,
+.toggle-button,
+footer,
+.overlay,
+.popup,
+#footer_content,
+.popup .content .close,
+.popup .content .close #closeInfo,
+.popup .content .imgnav,
+.popup .content .imgnav img {
+	position: absolute;
+}
+
+header,
+nav,
+section,
+footer,
+.overlay,
+.popup .content .imgnav img {
+	left: 0;
+	right: 0;
+}
+
+#footer_content,
+.popup {
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+}
+
+html {
+	height:100%;
+	overflow-x: hidden;
+}
+
+body {
+	min-width: 240px;
+	min-height: 100%;
+	position: relative;
+	margin: 0;
+}
+
+header {
+	top: 0;
+	height: 10%;
+	min-width: 200px;
+	
+	background-color: #799;
+	color: #fff;	
+}
+
+h1{
+	margin: 0;
+	top: 50%;
+	left: 50%;
+	
+	font-family: Powerweld;
+	font-size: 3.1vh;
+	font-weight: 300;
+	letter-spacing: 3px;
+	background-color: #564;
+	padding: 1% 3% 1% 3%;
+	border-radius: 10px 1px 10px 1px;
+	text-shadow: -1px 0 #000, 0 2px #000, 2px 0 #333, 0 -2px #222;
+	box-shadow: 8px 5px 20px 8px #333;
+	-webkit-transform: translate(-50%,-50%) rotate(-5deg);
+	transform: translate(-50%,-50%) rotate(-5deg);
+	transition-duration: 0.3s;
+}
+
+nav {
+	top: 10%;
+	min-height: 4%;
+}
+
+.step-button {
+	display: flex;
+	box-sizing: border-box;
+	align-items: center;
+	justify-content: center;
+
+	
+	background-color: #eef;
+	color: #000;
+	font-family: eurof55;
+	font-size: 2.5vmin;
+}
+
+section {
+	bottom: 4%;
+
+	background-color: #300;
+}
+
+#canvas {
+	background-color: #231;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+}
+
+.toggle-button {
+	display: inline-block;
+	padding: 0px;
+	top: 3%;
+	right: 4%;
+	
+	opacity: 0.5;
+	outline: none;
+	border: none;
+	border-radius: 3px;
+}
+
+footer {
+	display: block;
+	bottom: 0;
+	height: 4%;
+	z-index: 3;
+	
+	background-color: #799;
+}
+
+#footer_content {
+	color: #eef;
+	font-family: sans-serif;
+	font-size: 2.2vmin;
+	text-shadow: 0.1em 0.1em #222;
+}
+
+/* styling for the pop-up*/
+
+.overlay {
+	top: 0;
+	bottom: 0;
+	
+	background: transparent;
+	-webkit-transform: scale(0);
+	transform: scale(0);
+	-webkit-transition: transform 0.5s, opacity 0.5s;
+	transition: transform 0.5s, opacity 0.5s;
+	visibility: hidden;
+	opacity: 0;
+}
+/* 
+.overlay:target {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	visibility: visible;
+	opacity: 1;
+}
+*/
+.popup {
+	display: inline-block;
+	padding: 1%;
+	max-width: 90%;
+	max-height: 90%;
+	
+	background-color: #eee;
+	border-radius: 5px;
+	-webkit-transition: all 5s ease-in-out;
+	transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+	margin-top: 1%;
+
+	color: #444;
+	font-family: Tahoma, Arial, sans-serif;
+	font-size: 1.3vmax;
+}
+
+.popup .content .close {
+	top: 0.5%;
+	right: 1%;
+
+	opacity: 0.5;
+	transition: all 0.5s;
+}
+
+.popup .content .close:hover {
+	opacity: 1;
+	cursor: pointer;
+}
+
+.popup .content .close #closeInfo {
+	padding: 20%;
+	bottom: 0%;
+	right: 100%;
+	visibility: hidden;
+
+	color: #fff;
+	font-size: 90%;
+	background-color: #333;
+	border-radius: 10px;
+}
+
+.popup .content {
+	display: inline-block;
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
+
+.popup .content #imageBox {
+	display: inline-block;
+	position: relative;
+}
+
+.popup .content #imageBox #image {
+	float: left;
+}
+
+.popup .content .imgnav {
+	background-color: #ccc;
+	height: 100%;
+	width: 10%;
+	top: 0;
+	bottom: 0;
+	opacity: 0.3;
+	transition: opacity 0.3s;
+}
+
+.popup .content .imgnav img {
+	width: 100%;
+	top: 50%;
+	transform: translate(0,-50%);
+}
+
+.popup .content #prev {
+	left: 0%;
+}
+
+.popup .content #next {
+	right: 0;
+}
+
+.popup .content .button-section {
+	width: 100%;
+	display: inline-block;
+}
+
+.popup .content .button-section input[type="button"] {
+	float: right;
+	margin-left: 1%;
+}
+
+.popup input[type="file"] {
+	color: transparent;
+	max-width: 115px;
+
+}
+
+@media only screen and (min-width: 800px) {
+	.step-button {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		margin: 0;
+		width: 33.33%;
+	}
+	
+	.step-button:hover {
+		color: #799;
+		cursor: default;
+	}
+	
+	.step-button:hover::after {
+		content: '\00a0}';
+	}
+	
+	.step-button:hover::before {
+		content: '{\00a0';
+	}
+		
+	.step-button:nth-child(2) {
+		transform: translate(100%,0%);
+	}
+
+	.step-button:nth-child(3) {
+		transform: translate(200%,0%);
+	}
+	
+	section {
+		top: 14%;
+	}
+	
+	#help {
+		position: absolute;
+		top: 0%;
+		left: 3%;
+		padding: 4px;
+		display: inline-block;
+	
+		background-color: #ddd;
+		border-radius: 0px 0px 3px 3px;
+		color: #231;
+		font-size: 120%;
+		font-family: eurof55;
+		text-align: center;
+		text-decoration: underline;
+	}
+
+	#legend {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		padding: 10%;
+		width: 400%;
+	
+		background-color: #ddd;
+		border-radius: 0px 15px 15px 15px;
+		color: #231;
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity 0.5s;
+	}
+
+	#help:hover {
+		cursor: help;
+		text-decoration: none;
+		border-radius: 0px;
+	}
+
+	#help:hover #legend {
+		visibility: visible;
+		opacity: 1;
+		cursor: help;
+	}
+	
+	.toggle-button:hover {
+		opacity: 1;
+		cursor: pointer;
+		-webkit-transition-duration: 0.4s;
+		transition-duration: 0.4s;
+	}
+	
+	.popup .content .close:hover #closeInfo {
+		visibility: visible;
+	}
+	
+	.popup .content .imgnav:hover {
+		opacity: 0.8;
+		cursor: pointer;
+	}
+}
+
+@media only screen and (max-width: 800px) {
+	.step-button {
+		position: absolute;
+		width: 100%;
+		top: 0;
+		bottom: 0;
+	}
+	
+	.step-button:nth-child(odd) {
+		background-color: #dde;
+	}
+	
+	.step-button:nth-child(2) {
+		transform: translate(0%,100%);
+	}
+
+	.step-button:nth-child(3) {
+		transform: translate(0%,200%);
+	}
+			
+	section {
+		top: 22%;
+	}
+	
+	#help {
+		display: none;
+	}
+}
+
+/*share button*/
+
+#share_desktop {
+	position: fixed;
+	left: -11%;
+	bottom: 0%;
+	height: 30%;
+	width: 18%;
+	z-index: 1070;
+}
+
+.share-panel {
+	position: relative;
+	top: 8%;
+	left: -20%;
+	margin: 3% 0% 3% 0%;
+	height: 18%;
+	width: 100%;
+	border-radius: 10px;
+	background-color: #ddd;
+	transition-duration: 0.3s;
+}
+
+.share-panel img {
+	filter: grayscale(100%);
+	position: absolute;
+	right: 3%;
+	top: 50%;
+	height: 70%;
+	transform: translateY(-50%);
+}
+
+.share-panel:hover {
+	left: 0%;
+	cursor: pointer;
+	background-color: #fff;
+}
+
+.share-panel:hover img {
+	filter: none;
+}
